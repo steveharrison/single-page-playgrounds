@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      /* @todo Need to play around with unset more: https://developer.mozilla.org/en/docs/Web/CSS/unset
+                Can't see at a quick glance why you wouldn't just explicitly use inherit or initial, depending on the desired behaviour. */
+
+
+      a {
+        color: green;
+      }
+
+      h1 {
+        color: blue;
+        text-decoration: line-through;
+      }
+
+      h1#one a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+
+      h1#two {
+        color: initial;
+        text-decoration: initial;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 id="one"><a href="#">Heading #1</a></h1>
+    <h1 id="two"><a href="#">Heading #2</a></h1>
+
+  </body>
+</html>
