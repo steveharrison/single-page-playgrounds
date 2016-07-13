@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="clicked()" onfocus="focused()">Lorem ipsum</button>
+
+    <style>
+    button {
+      background: white;
+      /* ^ Interesting, native OS X button style gets focus ring disabled when you click on it, unless you tabbed to the button */
+      /* ...so remove this so we can clearly see when it's focused or not. */
+    }
+    </style>
+
+    <script>
+      function clicked() {
+        console.log('Button click event fired.');
+      }
+
+      function focused() {
+        console.log('Button focus event fired.');
+      }
+
+      console.info('The aim of this is to double-check that calling click() on a button does not focus it. Annoying, as different behaviour to when user clicks the button, so not entirely accurate for unit testing.');
+
+      setTimeout(function() {
+        let button = document.querySelector('button');
+
+        button.click();
+  
+        console.log('Button has been clicked and focused element is ', document.activeElement);
+      }, 1000);
+
+      setTimeout(function() {
+        let button = document.querySelector('button');
+
+        button.focus();
+
+        console.log('Button has been focused and focused element is ', document.activeElement);
+      }, 3000);
+    </script>
+  </body>
+</html>
