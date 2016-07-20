@@ -7,8 +7,8 @@
 		<button>Button</button>
 
 		<script>
-			console.info('Test what keyboard events an <a> element automatically fires vs a <button>.');
-			console.info('(Result: <a> element fires on Return but not Space; <button> fires for both.)');
+			console.info('Test what keys cause an <a> element to fire click event vs a <button>.');
+			console.info('(Result: <a> element fires onclick for Return but not Space; <button> fires onclick for both.)');
 
 			document.addEventListener('DOMContentLoaded', function() {
 				var elems = document.querySelectorAll('a, button');
