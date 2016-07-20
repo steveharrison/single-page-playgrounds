@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<button onclick="toggleAriaPressed(event)" aria-pressed="false">Lorem ipsum</button>
+		<button onclick="toggleAriaExpanded(event)" aria-expanded="false">Lorem ispum</button>
+		<span tabindex="0">Something else focusable</span>
+
+		<p>Notice that VoiceOver (not sure about other screen readers) does not read that aria-pressed has changed when toggling aria-pressed (focus button, then press with Return / Space to toggle). You have to manually tab to another element and then back in order for it to read the button according to the new aria-pressed value (e.g. "Lorem ipsum, toggle button" or "Lorem ipsum, selected, toggle button").</p>
+
+		<p>Same behaviour for aria-expanded.</p>
+
+		<p>Probably not a bug, but would be interested to know reasoning behind this and any good solutions to make it read the state change when pressed.</p>
+
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<script>
+			function toggleAriaPressed(event) {
+				var $element = $(event.target);
+				var pressed = $element.attr('aria-pressed') === 'true';
+				$element.attr('aria-pressed', !pressed);
+			}
+
+			function toggleAriaExpanded(event) {
+				var $element = $(event.target);
+				var expanded = $element.attr('aria-expanded') === 'true';
+				$element.attr('aria-expanded', !expanded);
+			}
+		</script>
+	</body>
+</html>

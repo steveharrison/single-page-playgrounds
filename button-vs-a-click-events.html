@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<a href="#">Link</a>
+
+		<button>Button</button>
+
+		<script>
+			console.info('Test what keyboard events an <a> element automatically fires vs a <button>.');
+			console.info('(Result: <a> element fires on Return but not Space; <button> fires for both.)');
+
+			document.addEventListener('DOMContentLoaded', function() {
+				var elems = document.querySelectorAll('a, button');
+				elems.forEach(function(elem) {
+					elem.addEventListener('click', function(event) {
+						event.preventDefault();
+						console.log('Click event fired.');
+					});
+
+				})
+			});
+		</script>
+	</body>
+</html>
