@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>var t0 = performance.now();</script>
+	</head>
+	<body>
+
+		<div id="anElement1">Element #1</div>
+
+		<script>
+			var t1 = performance.now();
+			console.log(document.getElementById('anElement1')); // ok
+			console.log(document.getElementById('anElement2')); // not defined yet
+
+			document.addEventListener('DOMContentLoaded', function() {
+				window.t2 = performance.now();
+				console.log('document loaded.');
+				console.log(t0, t1, t2);
+			});
+		</script>
+
+		<div id="anElement2">Element #2</div>
+	</body>
+
+</html>
