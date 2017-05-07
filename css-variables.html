@@ -3,24 +3,47 @@
 	<head>
 		<style type="text/css">
 			:root {
-				--main-color: grey;
+				--main-text-color: grey;
+				--main-shadow-color: #dadada;
+				--main-shadow-blur: 10px;
+				--main-border-radius: 4px;
+				--main-component-padding: 20px;
 			}
 
 			.card {
-				color: var(--main-color);
-				box-shadow: 1px 1px 10px black;
-				padding: 20px;
+				color: var(--main-text-color);
+				box-shadow: 0 1px var(--main-shadow-blur) var(--main-shadow-color);
+				border: 1px solid grey;
+				border-radius: var(--main-border-radius);
+				padding: var(--main-component-padding);
+				margin-bottom: 10px;
 			}
 
-			:root {
-				--main-color: blue;
+			aside {
+				width: 100px;
+				background-color: #eee;
+				--main-text-color: blue;
+				--main-component-padding: 10px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="card">
-			<h3>Lorem ipsum heading</h3>
-			<button>Click me</button>
+		<div class="container">
+			<div class="card">
+				<h3>Lorem ipsum heading</h3>
+				<button>Click me</button>
+			</div>
+			<div class="card">
+				<h3>Lorem ipsum heading</h3>
+				<button>Click me</button>
+			</div>
 		</div>
+		<aside>
+			<h2>Things are a bit different here</h2>
+			<div class="card">
+				<h3>Lorem ipsum heading</h3>
+				<button>Click me</button>
+			</div>
+		</aside>
 	</body>
 </html>
